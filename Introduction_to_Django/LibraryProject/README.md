@@ -12,4 +12,4 @@ This is a basic Django project for managing a library system.
 
 - `manage.py`: Django command-line utility.
 - `LibraryProject/settings.py`: Project configuration.
-- `LibraryProject/urls.py`: URL routing.s
+- `LibraryProject/urls.py`: URL routing.
