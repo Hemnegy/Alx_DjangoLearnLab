@@ -1,6 +1,3 @@
-
-
-
 from django.urls import path
 from . import views
 from .views import (
@@ -10,20 +7,18 @@ from .views import (
     PostUpdateView,
     PostDeleteView,
 )
-from . import views
 
 app_name = "blog"
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    # User-related views
+    path('', PostListView.as_view(), name='post-list'),  # Homepage = post list
     path('register/', views.register, name='register'),
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
     path('profile/', views.profile, name='profile'),
-]
 
-urlpatterns = [
-    path('', PostListView.as_view(), name='post-list'),
+    # Blog post CRUD views
     path('posts/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
     path('posts/new/', PostCreateView.as_view(), name='post-create'),
     path('posts/<int:pk>/edit/', PostUpdateView.as_view(), name='post-update'),
