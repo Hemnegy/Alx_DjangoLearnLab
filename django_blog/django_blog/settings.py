@@ -87,6 +87,17 @@ DATABASES = {
 }
 
 
+# Auth redirects
+LOGIN_REDIRECT_URL = 'blog:profile'
+LOGOUT_REDIRECT_URL = 'blog:login'
+LOGIN_URL = 'blog:login'
+
+# Static & media (keep your existing STATIC_URL)
+STATIC_URL = 'static/'
+
+# Where uploaded profile images go (optional feature)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
