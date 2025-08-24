@@ -19,10 +19,20 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from accounts.views import RegisterAPIView, LoginAPIView, ProfileAPIView
+from django.urls import path
+
+app_name = "accounts"
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/accounts/', include('accounts.urls')),  # include accounts app URLs
+    path('api/accounts/', include('accounts.urls')), 
+
+
+    path('register/', RegisterAPIView.as_view(), name='register'),
+    path('login/', LoginAPIView.as_view(), name='login'),
+    path('profile/', ProfileAPIView.as_view(), name='profile'),
 
 ]
 
